@@ -9,7 +9,7 @@ import {alpha, styled} from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import {Google} from '@mui/icons-material';
-import {AppBar} from "@mui/material";
+import {AppBar, Box, Button} from "@mui/material";
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -59,43 +59,56 @@ const DashboardNavbarRoot = styled(AppBar)(({theme}) => ({
     boxShadow: theme.shadows[3]
 }));
 
+const navItems = ["Speakers", "Venue"]
+
 export default function Appbar() {
     return (
         <DashboardNavbarRoot
             sx={{
                 left: {
-                    lg: 0
+                    lg: 0,
                 },
                 width: {
                     lg: 'calc(100%)'
-                }
+                },
             }}>
-        <Toolbar
-            disableGutters
-            sx={{
-                minHeight: 64,}}>
-                {/* google icon */}
-                <Google sx={{ color: 'white', mr: 1, fontSize: '30px' }} />
-                <Typography
-                    component="h1"
-                    variant="h6"
-                    color="inherit"
-                    noWrap
-                    sx={{ flexGrow: 1 }}
-                >
-                    Google Game & Startups Summit
-                </Typography>
-                <Search>
-                    <SearchIconWrapper>
-                        <SearchIcon />
-                    </SearchIconWrapper>
-                    <StyledInputBase
-                        placeholder="Ara..."
-                        inputProps={{ 'aria-label': 'search' }}
-                        // onChange={(e) => searchItem(e.target.value)}
-                    />
-                </Search>
-        </Toolbar>
+            <Toolbar
+                disableGutters
+                sx={{
+                    minHeight: 100,
+                    mr: 2}}>
+                    <Box display='flex' flexGrow={1}>
+                        <Google sx={{ color: 'white', ml: 2, fontSize: '30px' }} />
+                        <Typography
+                            component="h1"
+                            variant="h6"
+                            color="inherit"
+                            noWrap
+                            sx={{ flexGrow: 1, ml: 3}}
+                        >
+                            Google Game & Startups Summit
+                        </Typography>
+                    </Box>
+                    <Box>
+                        {navItems.map((item) => (
+                            <Button key={item} sx={{ color: '#fff' }}>
+                                {item}
+                            </Button>
+                        ))}
+                    </Box>
+                    <Box>
+                        <Search>
+                            <SearchIconWrapper>
+                                <SearchIcon />
+                            </SearchIconWrapper>
+                            <StyledInputBase
+                                placeholder="Ara..."
+                                inputProps={{ 'aria-label': 'search' }}
+                                // onChange={(e) => searchItem(e.target.value)}
+                            />
+                        </Search>
+                    </Box>
+            </Toolbar>
         </DashboardNavbarRoot>
     )
 }

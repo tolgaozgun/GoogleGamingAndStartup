@@ -5,10 +5,9 @@ import RoomIcon from "@mui/icons-material/Room";
 
 const MainPage = () => {
     return (
-    <>
+    <Container sx={{ py: 8}} maxWidth="md">
         <Container sx={{mt: 10}}>
             <Box sx={{
-                border: '2px solid  white',
                 width: 'fit-content',
                 color: 'white',
                 p: 1,
@@ -23,9 +22,7 @@ const MainPage = () => {
 
 
         <Box sx={{
-            border: '2px solid  white',
             color: 'white',
-            borderRadius: 2,
             p: 3,
             m: 1,
             justifyContent: 'space-around',
@@ -73,9 +70,7 @@ const MainPage = () => {
 
 
         <Box sx={{
-            border: '2px solid  white',
             color: 'white',
-            borderRadius: 2,
             p: 2,
             m: 1,
             justifyContent: 'space-around',
@@ -122,7 +117,6 @@ const MainPage = () => {
         </Box>
 
         <Box sx={{
-            borderTop: '3px solid  white',
             color: "white",
             p: 2,
             m: 1,
@@ -148,10 +142,8 @@ const MainPage = () => {
                     color: 'black',
                     fontSize: '20px',
                     fontWeight: 'bold',
-                    padding: '20px',
-                    marginBottom: '30px',
-                    marginTop: '30px',
-                    borderRadius: '20px',
+                    p: 2,
+                    m: 2,
                     weight: '100%'
                 }}>
                     <AccordionSummary
@@ -278,7 +270,7 @@ const MainPage = () => {
                 © 2023 Google Startup and Game Summit
             </Typography>
         </div>
-    </>
+    </Container>
     )
 }
 
